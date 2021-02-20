@@ -19,15 +19,23 @@ _A complete solution with a personalised app and admin portal, with a special co
 ### **Features of VaxU** - _Artificial Intelligence & Machine Learning Models_
 
 1. ML - Covid Cough Detection
-   - hello
-   - hi
+   - This is a model which takes coughing audio of the patient as input and then predicts if the patient is suffering from covid-19 or not.
+   - The 9 sound categories (or classes) are chosen such that physical state of the respiratory system is well captured just by using the sound samples. We tested the complementarity across these sound categories by building a multi-class classifier trained and tested on acoustic features extracted from the different soundsamples.  The goal was to build a9-class (corresponding to the 9 sound categories) classifier and evaluate the confusion matrix.The clean audio recordings were pooled and grouped by 9 sound categories. A set of different short-time (500msec, with hop of 100msec) temporal and spectral acoustic features were
+extracted from the audio files. These included spectral contrast(7-D), MFCCs (13-D), spectral roll-off (1-D), spectral centroid(1-D), mean square energy (1-D), polynomial fit to the spec-trum (2-D), zero-crossing rate (1-D), spectral bandwidth (1-D),and spectral flatness (1−D).
+   - We are converting audio of the cough to the image using `librosa` 
+   - Training the images of the audio in Convolutional Neural Network(CNN) model for 100 epochs using `keras` and `tensorflow`
+   - And further we input the audio of the patient and it predicts either 0 or 1 , where 0 means the patient is covid negative and 1 means the patient is covid               positive
 2. AI - Adhaar Card Details Validation
-   - hello
-   - hi
+   - In this model we are validating every information given in the adhaar card with the details filed by the patient in the vaccination application form .
+   - We are achieving this with help of `pytesseract` library which helps in Optical Character Recognition 
+   - We are applying different kernels and image processing methods in order to get the best result from adhaar card. 
+   - In future we are thinking otp verification too , In order to increase our security.
 3. AI - Face Recognition
-   - hello
-   - hi
+   - In this model we are validating that the person who filed the form is the same person getting vaccinated at the center.
+   - To achieve this we are taking a picture of the person while filing the vaccination application form and validating the image with the person's face who came at the hospital for vaccination, we are using `face_recognition` library in order to get perfect accuracy.  
 
+References
+ - https://github.com/iiscleap/Coswara-Data
 ### **Features of VaxU** - _Web_
 
 1. FrontEnd :
@@ -53,19 +61,28 @@ _A complete solution with a personalised app and admin portal, with a special co
 
 ### **Tech Stack Used:**
 
-1. ## Machine Learning:
-2. Web - Frontend:
+1. Machine Learning:
+    - Tensorflow
+    - opencv
+    - librosa
+    - matplotlib
+    - keras
+    - numpy
+    - pandas
+    - pytesseract
+    - face_recognition 
+3. Web - Frontend:
    - HTML
    - CSS
    - Bulma Framework
    - JavaScript
    - AOS Library
-3. Web - Backend:
+4. Web - Backend:
    - Django
    - Microsoft Azure Server
    - Celery Beat
-4. Mobile Application:
-5. Tools:
+5. Mobile Application:
+6. Tools:
    - Git
    - GitHub Students Pack
 
